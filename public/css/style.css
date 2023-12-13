@@ -1,0 +1,40 @@
+/* Configurações Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bigger-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main'
+    'sidebar main main main';
+}
+
+.header {
+  grid-area: header;
+  height: 10vh;
+  width: 80vw;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: 100vh;
+  width: 20vw;
+}
+
+.main {
+  grid-area: main;
+  height: 90vh;
+  width: 80vw;
+}
+
+.header,
+.sidebar,
+.main {
+  border: 1px solid black;
+}
