@@ -12,6 +12,10 @@
 button {
   border: none;
   background: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -39,7 +43,7 @@ a {
     'sidebar main main main main ';
 }
 
-/* Header Content */
+/* Conteúdo do header */
 .header {
   grid-area: header;
   height: 10vh;
@@ -48,7 +52,7 @@ a {
   align-items: center;
 }
 
-.heading {
+.main-heading {
   font-size: 3rem;
 }
 
@@ -57,17 +61,24 @@ a {
   align-items: center;
 }
 
-/* Sidebar Content */
+/* Conteúdo do sidebar */
 .sidebar {
   grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Main Content */
+.sidebar-heading {
+  font-size: 2rem;
+}
+
+/* Conteúdo do main */
 .main {
   grid-area: main;
 }
 
-/* Grouping */
+/* Agrupamento */
 .header,
 .sidebar,
 .main {
