@@ -9,8 +9,13 @@
 </head>
 
 <body class="bigger-container">
-  <header class="header"></header>
-  <sidebar class="sidebar"></sidebar>
+  <header class="header">
+    <button class="toggle-sidebar"><i class="fa-solid fa-bars icons"></i></button>
+    <h1 class="heading"><%= htmlWebpackPlugin.options.title %></h1>
+    <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github icons"></i></a>
+  </header>
+  <sidebar class="sidebar">
+  </sidebar>
   <main class="main"></main>
 </body>
 
