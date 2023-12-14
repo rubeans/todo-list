@@ -6,11 +6,15 @@ import Todo from '../scripts/components/todo.js'
 const header = document.querySelector('.header')
 const sidebar = document.querySelector('.sidebar')
 const main = document.querySelector('.main')
-const toggleBtn = document.querySelector('.toggle-sidebar')
+const toggleSidebar = document.querySelector('.toggle-sidebar')
 
 // Toggle Sidebar Menu
 toggleSidebar.addEventListener('click', () => {
-    sidebar.hidden = true
-    main.style.width = "100vw"
-    // TODO
+    if (sidebar.style.display === 'none') {
+        sidebar.style.display = 'block'
+        main.style.width = 'inherit'
+    } else {
+        sidebar.style.display = 'none'
+        main.style.width = "100vw"
+    }
 })
