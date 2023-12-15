@@ -17,11 +17,26 @@
   <sidebar class="sidebar">
     <div class="tasks">
       <h2 class="sidebar-heading">Tarefas</h2>
-      <button class="add"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+      <form class="add-task-form" method="dialog">
+        <input type="text" name="title" id="title" placeholder="Titulo" required=true autofocus=true autocomplete="off">
+        <textarea name="description" id="description" placeholder="Descrição" rows="3"></textarea>
+        <label for="date">Data:</label>
+        <input id="date" type="date" max="9999-12-31">
+        <label for="priority">Prioridade:</label>
+        <select id="priority">
+          <option value="baixa">Baixa</option>
+          <option value="media">Média</option>
+          <option value="alta">Alta</option>
+        </select>
+        <button class="add-btn" type="submit"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+      </form>
     </div>
     <div class="projects">
       <h2 class="sidebar-heading">Projetos</h2>
-      <button class="add"><i class="fa-solid fa-plus"></i>Novo Projeto</button>
+      <form class="add-project-form" method="dialog">
+        <input type="text" name="title" id="title" placeholder="Nome do Projeto" required=true autocomplete="off">
+        <button class="add-btn" type="submit"><i class="fa-solid fa-plus"></i>Novo Projeto</button>
+      </form>
     </div>
 
   </sidebar>

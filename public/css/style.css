@@ -8,6 +8,10 @@
   font-family: 'Preahvihear', sans-serif;
 }
 
+:root {
+  --default-padding: 20px;
+}
+
 /* Padrões de Elementos */
 button {
   border: none;
@@ -32,15 +36,21 @@ a {
   color: inherit;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
 /* Container */
 .bigger-container {
   min-height: 100vh;
   min-width: 100vw;
   display: grid;
   grid-template-areas:
-    'header header header header header '
-    'sidebar main main main main '
-    'sidebar main main main main ';
+    'header header header header header header'
+    'sidebar main main main main main'
+    'sidebar main main main main main';
 }
 
 /* Conteúdo do header */
@@ -50,6 +60,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 var(--default-padding) 0 var(--default-padding);
 }
 
 .main-heading {
@@ -66,11 +77,18 @@ a {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .sidebar-heading {
   font-size: 2rem;
+}
+
+.projects,
+.tasks {
+  height: 50%;
+  overflow: auto;
+  border: 1px solid black;
+  padding: var(--default-padding);
 }
 
 /* Conteúdo do main */
@@ -78,15 +96,23 @@ a {
   grid-area: main;
 }
 
-/* Agrupamento */
+/* Agrupamento de elementos*/
 .header,
-.sidebar,
-.main {
+.main,
+.sidebar {
   border: 1px solid black;
-  padding: 20px;
 }
 
 .main,
 .sidebar {
   height: 90vh;
 }
+
+input,
+textarea {
+  padding-left: 5px;
+}
+
+/* Mobile */
+
+/* TODO Fazer o desing adaptavel para mobile */
