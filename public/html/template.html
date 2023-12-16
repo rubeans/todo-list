@@ -10,36 +10,47 @@
 
 <body class="bigger-container">
   <header class="header">
-    <button class="toggle-sidebar"><i class="fa-solid fa-bars icons"></i></button>
+    <button class="toggle-menu-btn"><i class="fa-solid fa-bars icons"></i></button>
     <h1 class="main-heading"><%= htmlWebpackPlugin.options.title %></h1>
     <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github icons"></i></a>
   </header>
-  <sidebar class="sidebar">
+  <section class="menu">
     <div class="tasks">
-      <h2 class="sidebar-heading">Tarefas</h2>
-      <form class="add-task-form" method="dialog">
-        <input type="text" name="title" id="title" placeholder="Titulo" required=true autofocus=true autocomplete="off">
-        <textarea name="description" id="description" placeholder="Descrição" rows="3"></textarea>
-        <label for="date">Data:</label>
-        <input id="date" type="date" max="9999-12-31">
-        <label for="priority">Prioridade:</label>
-        <select id="priority">
-          <option value="baixa">Baixa</option>
-          <option value="media">Média</option>
-          <option value="alta">Alta</option>
-        </select>
-        <button class="add-btn" type="submit"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
-      </form>
-    </div>
+      <h2 class="menu-heading">Tarefas</h2>
+      <button class="open-modal-btn"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+      <dialog id="modal" class="modal">
+          <button class="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+          <form class="add-task-form" method="dialog">
+            <div class="task-title">
+              <input type="text" name="title" id="title" placeholder="Titulo" required=true autofocus=true autocomplete="off">
+            </div>
+            <div class="task-description">
+              <textarea name="description" id="description" placeholder="Descrição" rows="3"></textarea>
+            </div>
+            <div class="task-date">
+              <label for="date">Data:</label>
+              <input id="date" type="date" max="9999-12-31">
+            </div>
+            <div class="task-priority">
+              <label for="priority">Prioridade:</label>
+              <select id="priority">
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+            <button class="add-btn" type="submit">Adicionar</button>
+          </form>
+        </div>
+      </dialog>
     <div class="projects">
-      <h2 class="sidebar-heading">Projetos</h2>
+      <h2 class="menu-heading">Projetos</h2>
       <form class="add-project-form" method="dialog">
         <input type="text" name="title" id="title" placeholder="Nome do Projeto" required=true autocomplete="off">
         <button class="add-btn" type="submit"><i class="fa-solid fa-plus"></i>Novo Projeto</button>
       </form>
     </div>
-
-  </sidebar>
+  </section>
   <main class="main"></main>
 </body>
 
