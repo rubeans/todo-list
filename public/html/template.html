@@ -17,30 +17,32 @@
   <section class="menu">
     <div class="tasks">
       <h2 class="menu-heading">Tarefas</h2>
-      <button class="open-modal-btn"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+      <div class="center-inp_btn">
+        <button class="menu-btns open-modal-btn"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+      </div>
       <dialog id="modal" class="modal">
         <div class="modal-content">
           <button class="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
           <form class="add-task-form" method="dialog">
-            <div class="task-title">
-              <input type="text" name="title" id="title" placeholder="Título" required=true autofocus=true autocomplete="off">
+            <div class="task-title-container">
+              <input class="task-title" type="text" name="title" id="title" placeholder="Título" required=true autofocus=true autocomplete="off">
             </div>
-            <div class="task-description">
-              <textarea name="description" id="description" placeholder="Descrição" rows="3"></textarea>
+            <div class="task-description-container">
+              <textarea class="task-description" name="description" id="description" placeholder="Descrição" rows="3"></textarea>
             </div>
-            <div class="task-date">
+            <div class="task-date-container">
               <label for="date">Data:</label>
-              <input id="date" type="date" max="9999-12-31">
+              <input class="task-date" id="date" type="date" max="9999-12-31">
             </div>
-            <div class="task-priority">
+            <div class="task-priority-container">
               <label for="priority">Prioridade:</label>
-              <select id="priority">
-                <option value="baixa">Baixa</option>
-                <option value="media">Média</option>
-                <option value="alta">Alta</option>
+              <select class="task-priority" id="priority">
+                <option class="priority-option" value="baixa">Baixa</option>
+                <option class="priority-option" value="media">Média</option>
+                <option class="priority-option" value="alta">Alta</option>
               </select>
             </div>
-            <button class="add-btn" type="submit">Adicionar</button>
+            <button class="add-task-btn" type="submit">Adicionar</button>
           </form>
         </div>
 
@@ -49,12 +51,17 @@
     <div class="projects">
       <h2 class="menu-heading">Projetos</h2>
       <form class="add-project-form" method="dialog">
-        <input type="text" name="title" id="title" placeholder="Nome do Projeto" required=true autocomplete="off">
-        <button class="add-btn" type="submit"><i class="fa-solid fa-plus"></i>Novo Projeto</button>
+        <div class="center-inp_btn">
+          <input class="project-title" type="text" name="title" id="title" placeholder="Nome do Projeto" required=true autocomplete="off">
+          <button class="menu-btns" type="submit"><i class="fa-solid fa-plus"></i>Novo Projeto</button>
+        </div>
       </form>
     </div>
   </section>
-  <main class="main"></main>
+  <main class="main">
+    <h1>jçlfajfdlafjaçf</h1>
+    <p>lkfajçsdlfjafakç</p>
+  </main>
 </body>
 
 </html>
