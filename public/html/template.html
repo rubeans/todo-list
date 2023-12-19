@@ -19,10 +19,11 @@
       <h2 class="menu-heading">Tarefas</h2>
       <button class="open-modal-btn"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
       <dialog id="modal" class="modal">
+        <div class="modal-content">
           <button class="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
           <form class="add-task-form" method="dialog">
             <div class="task-title">
-              <input type="text" name="title" id="title" placeholder="Titulo" required=true autofocus=true autocomplete="off">
+              <input type="text" name="title" id="title" placeholder="Título" required=true autofocus=true autocomplete="off">
             </div>
             <div class="task-description">
               <textarea name="description" id="description" placeholder="Descrição" rows="3"></textarea>
@@ -42,7 +43,9 @@
             <button class="add-btn" type="submit">Adicionar</button>
           </form>
         </div>
-      </dialog>
+
+    </div>
+    </dialog>
     <div class="projects">
       <h2 class="menu-heading">Projetos</h2>
       <form class="add-project-form" method="dialog">
