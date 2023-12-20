@@ -8,6 +8,7 @@ const toggleMenu = (()=>{
         if (menu.style.display === 'none') {
             menu.style.display = 'flex'
             main.style.width = 'inherit'
+            main.style.width = "80vw"
         } else {
             menu.style.display = 'none'
             main.style.width = "100vw"
