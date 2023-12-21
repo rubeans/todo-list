@@ -1,6 +1,5 @@
 // Importar arquivos
 import style from '../public/css/style.css'
-import Todo from './components/todo.js'
 import toggleMenu from './components/toggle-menu.js'
 
 // Declarar variáveis

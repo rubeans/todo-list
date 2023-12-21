@@ -10,15 +10,27 @@
 
 <body class="bigger-container">
   <header class="header">
-    <button class="toggle-menu-btn"><i class="fa-solid fa-bars icons"></i></button>
+    <button class="toggle-menu-btn"><i class="fa-solid fa-arrow-left header-icons"></i></button>
     <h1 class="main-heading"><%= htmlWebpackPlugin.options.title %></h1>
-    <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github icons"></i></a>
+    <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github header-icons"></i></a>
   </header>
   <section class="menu">
-    <div class="tasks">
-      <h2 class="menu-heading">Tarefas</h2>
-     </div> 
-    <div class="projects">
+    <div class="top-menu">
+      <div class="main-top-menu">
+        <h2 class="menu-heading">Menu</h2>
+      </div>
+      <div class="top-menu-content">
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" class="search-input" placeholder="Pesquisar...">
+        </div>
+        <div class="inbox">
+          <i class="fa-solid fa-inbox"></i>
+          <button class="inbox-btn"></i>Entrada</button>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-menu">
       <h2 class="menu-heading">Projetos</h2>
     </div>
   </section>
