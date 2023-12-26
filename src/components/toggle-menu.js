@@ -8,15 +8,17 @@ const toggleMenu = (() => {
     toggleMenuBtn.addEventListener('click', () => {
         if (menu.style.display === 'none') {
             menu.style.display = 'flex'
-            menu.style.width = '30vw'
-            main.style.width = "70vw"
             arrow.classList.add('fa-arrow-left')
             arrow.classList.remove('fa-bars')
+            if (menu.style.width = '20vw') {
+                main.style.width = '80vw'
+            }
         } else {
             menu.style.display = 'none'
-            main.style.width = "100vw"
             arrow.classList.remove('fa-arrow-left')
             arrow.classList.add('fa-bars')
+            main.style.width = '100vw'
+            menu.style.width = 'none'
         }
     })
 })()

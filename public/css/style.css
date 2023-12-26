@@ -26,6 +26,13 @@ button:hover {
   cursor: pointer;
 }
 
+/* Agrupamento de elementos*/
+.header,
+.main,
+.menu {
+  border: 1px solid black;
+}
+
 /* Container */
 .bigger-container {
   min-height: 100vh;
@@ -34,12 +41,11 @@ button:hover {
   grid-template-areas:
     'menu header'
     'menu main'
-    'menu main';
+    'menu main'
 }
 
 /* Conteúdo do header */
 .header {
-  grid-area: header;
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -71,15 +77,14 @@ button:hover {
 
 /* Conteúdo do Menu */
 .menu {
-  grid-area: menu;
   display: flex;
   flex-direction: column;
-  width: 30vw;
-  height: 100vh;
+  position: relative;
 }
 
 .top-menu,
 .bottom-menu {
+  padding: 20px;
   height: 50%;
   overflow: auto;
   border: 1px solid black;
@@ -94,28 +99,17 @@ button:hover {
 
 /* Conteúdo do main */
 .main {
-  grid-area: main;
-  height: 90vh;
-  width: 70vw;
-}
-
-/* Agrupamento de elementos*/
-.header,
-.main,
-.menu {
-  border: 1px solid black;
+  padding: 40px;
 }
 
 /* Mobile */
-@media(max-width: 640px) {
+@media(max-width: 425px) {
   .bigger-container {
-    min-height: 100vh;
-    min-width: 100vw;
     display: grid;
     grid-template-areas:
       'header header'
-      'menu main'
-      'menu main'
+      'menu menu'
+      'main main'
     ;
   }
 
@@ -126,9 +120,42 @@ button:hover {
   .menu {
     grid-area: menu;
     height: 90vh;
+    width: 100vw;
   }
 
   .main {
     grid-area: main;
+    width: 100vw;
+    height: 90vh;
   }
 }
+
+/* Tablet - Laptop - Desktop */
+@media(min-width: 426px) {
+  .bigger-container {
+    display: grid;
+    grid-template-areas:
+      'menu header'
+      'menu menu'
+      'menu main'
+    ;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .menu {
+    grid-area: menu;
+    height: 100vh;
+    width: 20vw;
+  }
+
+  .main {
+    grid-area: main;
+    height: 90vh;
+    width: 80vw;
+  }
+}
+
+/* TODO Resolver o problema de quando aperta o botao do menu e fica bugado na tela pequena */
