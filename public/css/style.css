@@ -111,7 +111,7 @@ button:hover {
   gap: .4rem;
 }
 
-.menu-btns {
+.menu-btn {
   gap: .5rem;
   padding: 10px;
   border-radius: 5px;
@@ -120,18 +120,17 @@ button:hover {
   background: none;
 }
 
-.menu-btns:hover {
+.menu-btn:hover {
   background-color: var(--palette_4);
   color: var(--palette_2);
 }
 
-
-.default-project-div {
+.default-bottom-menu-content {
   display: flex;
   align-items: center;
 }
 
-.project-name {
+.project-name-input {
   width: 80%;
   border: none;
   outline: none;
@@ -139,7 +138,7 @@ button:hover {
   background-color: var(--palette_1);
 }
 
-.project-name::placeholder {
+.project-name-input::placeholder {
   color: var(--palette_3);
 }
 
@@ -152,8 +151,44 @@ button:hover {
   color: var(--palette_1);
 }
 
-.project-name,
-.add-project-btn {
+
+/* TODO FIX STYLE */
+.project {
+  display: flex;
+  align-items: center;
+}
+
+.bottom-menu-content{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.project-name-btn {
+  width: 80%;
+  border-radius: 5px 0 0 5px;
+  background-color: var(--palette_3);
+  color: var(--palette_1);
+}
+
+.fa-delete-left {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  background-color: var(--palette_1);
+  color: var(--palette_3);
+}
+
+.fa-delete-left:hover {
+  cursor: pointer;
+}
+
+.project-name-input,
+.add-project-btn,
+.project-name-btn,
+.fa-delete-left {
   padding: 10px;
   font-size: 1.2rem;
 }

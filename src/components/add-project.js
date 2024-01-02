@@ -1,16 +1,22 @@
-const bottomMenu = document.querySelector('.bottom-menu')
-const projectName = document.querySelector('.project-name')
+const projectNameInput = document.querySelector('.project-name-input')
 const addProjectBtn = document.querySelector('.add-project-btn')
-const projectNamesDiv = document.querySelector('.project-names')
+const bottomMenuContent = document.querySelector('.bottom-menu-content')
 
 const addProject = (() => {
     addProjectBtn.addEventListener('click', () => {
-        if (!projectName.value) {
+        if (!projectNameInput.value) {
+            alert('Não é póssivel adicionar um projeto sem um nome.')
             return
         } else {
-            projectNamesDiv.insertAdjacentHTML('beforeend',
-                `<button class="menu-btns">${projectName.value}</button>`
+            bottomMenuContent.insertAdjacentHTML('beforeend',
+                `<div class="project">
+                    <button class="project-name-btn">${projectNameInput.value}</button>
+                    <i class="fa-solid fa-delete-left"></i>
+                </div>`
             )
+            projectNameInput.value = ''
+            projectNameInput.type = 'reset'
+            projectNameInput.type = 'text'
         }
     })
 })()
