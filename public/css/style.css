@@ -35,6 +35,7 @@ button:hover {
     'header header'
     'menu main'
     'menu main';
+  overflow: hidden;
 }
 
 /* Conteúdo do header */
@@ -124,6 +125,39 @@ button:hover {
   color: var(--palette_2);
 }
 
+
+.default-project-div {
+  display: flex;
+  align-items: center;
+}
+
+.project-name {
+  width: 80%;
+  border: none;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  background-color: var(--palette_1);
+}
+
+.project-name::placeholder {
+  color: var(--palette_3);
+}
+
+.add-project-btn {
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  background-color: var(--palette_3);
+  color: var(--palette_1);
+}
+
+.project-name,
+.add-project-btn {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
 /* Conteúdo do main */
 .main {
   padding: 20px;
@@ -162,16 +196,6 @@ button:hover {
 
 /* Tablet */
 @media(min-width: 768px) {
-  .bigger-container {
-    display: grid;
-    grid-template-areas:
-      'header header'
-      'menu main'
-      'menu main'
-    ;
-    overflow: hidden;
-  }
-
   .header {
     grid-area: header;
   }
@@ -191,16 +215,6 @@ button:hover {
 
 /*- Laptop - Desktop */
 @media(min-width: 769px) {
-  .bigger-container {
-    display: grid;
-    grid-template-areas:
-      'header header'
-      'menu main'
-      'menu main'
-    ;
-    overflow: hidden;
-  }
-
   .header {
     grid-area: header;
   }
