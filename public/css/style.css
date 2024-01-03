@@ -92,7 +92,7 @@ button:hover {
 
 .top-menu,
 .bottom-menu {
-  padding: 10px;
+  padding: 20px;
   height: 50%;
   overflow: auto;
   display: flex;
@@ -195,16 +195,22 @@ button:hover {
   background-color: #ff0808;
 }
 
+.all-projects-txt{
+  font-weight: bold;
+  font-size: .9rem;
+}
+
 /* Conteúdo do main */
 .main {
   padding: 20px;
   display: flex;
+  flex-direction: column;
   background-color: var(--palette_1);
   color: var(--palette_3);
 }
 
 /* Mobile */
-@media(max-width: 427px) {
+@media only screen and (max-width: 600px) {
   .bigger-container {
     display: grid;
     grid-template-areas:
@@ -231,8 +237,8 @@ button:hover {
   }
 }
 
-/* Tablet */
-@media(min-width: 768px) {
+/*- Laptop - Desktop */
+@media only screen and (min-width: 600px) {
   .header {
     grid-area: header;
   }
@@ -247,24 +253,5 @@ button:hover {
     grid-area: main;
     height: 90vh;
     width: 70vw;
-  }
-}
-
-/*- Laptop - Desktop */
-@media(min-width: 769px) {
-  .header {
-    grid-area: header;
-  }
-
-  .menu {
-    grid-area: menu;
-    height: 90vh;
-    width: 20vw;
-  }
-
-  .main {
-    grid-area: main;
-    height: 90vh;
-    width: 80vw;
   }
 }
