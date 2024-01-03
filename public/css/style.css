@@ -105,10 +105,26 @@ button:hover {
   text-decoration: underline;
 }
 
+.menu-btn:hover,
+.project-name-btn:hover {
+  background-color: var(--palette_4);
+  color: var(--palette_2);
+}
+
+.project-name-input,
+.add-project-btn,
+.project-name-btn,
+.fa-delete-left {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+/* Top Menu*/
 .top-menu-content {
   display: flex;
   flex-direction: column;
-  gap: .4rem;
+  gap: .5rem;
+  overflow: auto;
 }
 
 .menu-btn {
@@ -120,14 +136,12 @@ button:hover {
   background: none;
 }
 
-.menu-btn:hover {
-  background-color: var(--palette_4);
-  color: var(--palette_2);
-}
-
-.default-bottom-menu-content {
+/* Bottom Menu*/
+.default-bottom-menu-content,
+.project {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .project-name-input {
@@ -151,17 +165,11 @@ button:hover {
   color: var(--palette_1);
 }
 
-
-/* TODO FIX STYLE */
-.project {
-  display: flex;
-  align-items: center;
-}
-
-.bottom-menu-content{
+.bottom-menu-content {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  overflow: auto;
 }
 
 .project-name-btn {
@@ -176,21 +184,15 @@ button:hover {
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 0 5px 5px 0;
-  background-color: var(--palette_1);
-  color: var(--palette_3);
+  background-color: #d20505;
+  color: var(--palette_1);
 }
 
 .fa-delete-left:hover {
   cursor: pointer;
-}
-
-.project-name-input,
-.add-project-btn,
-.project-name-btn,
-.fa-delete-left {
-  padding: 10px;
-  font-size: 1.2rem;
+  background-color: #ff0808;
 }
 
 /* Conteúdo do main */

@@ -2,6 +2,7 @@
 import style from '../public/css/style.css'
 import toggleMenu from './components/toggle-menu.js'
 import addProject from './components/add-project.js'
+import deleteProject from './components/delete-project.js'
 
 // Declarar variáveis
 const header = document.querySelector('.header')
