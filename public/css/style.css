@@ -45,19 +45,12 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px 0 20px;
-  background-color: var(--palette_3);
+  background-color: var(--palette_4);
   color: var(--palette_1);
 }
 
 .toggle-menu-btn {
   background: none;
-}
-
-.header-icons {
-  font-size: 2rem;
-}
-
-.toggle-menu-btn {
   padding: 4px 8px;
   border-radius: 5px;
   color: var(--palette_1);
@@ -65,7 +58,11 @@ button:hover {
 
 .toggle-menu-btn:hover {
   background-color: var(--palette_1);
-  color: var(--palette_3);
+  color: var(--palette_4);
+}
+
+.header-icons {
+  font-size: 2rem;
 }
 
 .github-link {
@@ -105,10 +102,22 @@ button:hover {
   text-decoration: underline;
 }
 
+.menu-btn {
+  color: var(--palette_4);
+  gap: .5rem;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  width: 100%;
+  background: none;
+  font-weight: bold;
+}
+
 .menu-btn:hover,
-.project-name-btn:hover {
+.project-name-btn:hover,
+.active-btn {
   background-color: var(--palette_4);
-  color: var(--palette_2);
+  color: var(--palette_1);
 }
 
 .project-name-input,
@@ -127,15 +136,6 @@ button:hover {
   overflow: auto;
 }
 
-.menu-btn {
-  gap: .5rem;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  width: 100%;
-  background: none;
-}
-
 /* Bottom Menu*/
 .default-bottom-menu-content,
 .project {
@@ -145,23 +145,25 @@ button:hover {
 }
 
 .project-name-input {
-  width: 80%;
+  width: 90%;
   border: none;
   outline: none;
   border-radius: 5px 0 0 5px;
   background-color: var(--palette_1);
+  color: var(--palette_4);
+  font-weight: bold;
 }
 
 .project-name-input::placeholder {
-  color: var(--palette_3);
+  color: var(--palette_4);
 }
 
 .add-project-btn {
   justify-content: center;
-  width: 20%;
+  width: 10%;
   height: 100%;
   border-radius: 0 5px 5px 0;
-  background-color: var(--palette_3);
+  background-color: var(--palette_4);
   color: var(--palette_1);
 }
 
@@ -173,29 +175,33 @@ button:hover {
 }
 
 .project-name-btn {
-  width: 80%;
-  border-radius: 5px 0 0 5px;
-  background-color: var(--palette_3);
-  color: var(--palette_1);
+  width: 90%;
+  border-radius: 5px;
+  background-color: var(--palette_2);
+  color: var(--palette_4);
+  font-weight: bold;
+}
+
+.project-name-btn::first-letter{
+  text-transform: capitalize;
 }
 
 .fa-delete-left {
-  width: 20%;
+  width: 10%;
   height: 100%;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0 5px 5px 0;
-  background-color: #d20505;
-  color: var(--palette_1);
+  border-radius: 100px;
+  color: #aa2222;
 }
 
-.fa-delete-left:hover {
-  cursor: pointer;
-  background-color: #ff0808;
+.fa-delete-left:hover{
+  color: #ff0000;
 }
 
-.all-projects-txt{
+.all-projects-txt {
   font-weight: bold;
   font-size: .9rem;
 }
@@ -206,7 +212,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   background-color: var(--palette_1);
-  color: var(--palette_3);
+  color: var(--palette_4);
+  overflow: auto;
 }
 
 /* Mobile */

@@ -1,5 +1,5 @@
-const deleteBtn = document.querySelector('.fa-delete-left')
-const projectNameBtns = document.querySelectorAll('.project-name-btn')
+const deleteBtn = document.querySelectorAll('.fa-delete-left')
+const project = document.querySelectorAll('.project')
 
 const deleteProject = (() => {
     // TODO

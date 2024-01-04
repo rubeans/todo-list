@@ -1,15 +1,14 @@
-const btnCount = document.querySelectorAll('.active-btn').length
+const isActive = document.querySelectorAll('.isActive')
 const main = document.querySelector('.main')
 const mainHeading = document.createElement('h1')
+main.appendChild(mainHeading)
 
 const getActiveBtn = (() => {
-    for (let i = 0; i < btnCount; i++) {
-        const activeBtn = document.querySelectorAll('.active-btn')[i]
-        activeBtn.addEventListener('click', () => {
-            mainHeading.textContent = activeBtn.textContent
+    isActive.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            mainHeading.textContent = btn.textContent
         })
-    }
-    main.appendChild(mainHeading)
+    })
 })()
 
 export default getActiveBtn
