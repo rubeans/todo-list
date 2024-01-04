@@ -90,11 +90,13 @@ button:hover {
 .top-menu,
 .bottom-menu {
   padding: 20px;
-  height: 50%;
-  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.bottom-menu {
+  overflow: auto;
 }
 
 .menu-heading {
@@ -145,7 +147,7 @@ button:hover {
 }
 
 .project-name-input {
-  width: 90%;
+  width: 85%;
   border: none;
   outline: none;
   border-radius: 5px 0 0 5px;
@@ -160,7 +162,7 @@ button:hover {
 
 .add-project-btn {
   justify-content: center;
-  width: 10%;
+  width: 15%;
   height: 100%;
   border-radius: 0 5px 5px 0;
   background-color: var(--palette_4);
@@ -175,19 +177,15 @@ button:hover {
 }
 
 .project-name-btn {
-  width: 90%;
+  width: 85%;
   border-radius: 5px;
   background-color: var(--palette_2);
   color: var(--palette_4);
   font-weight: bold;
 }
 
-.project-name-btn::first-letter{
-  text-transform: capitalize;
-}
-
 .fa-delete-left {
-  width: 10%;
+  width: 15%;
   height: 100%;
   cursor: pointer;
   display: flex;
@@ -197,7 +195,7 @@ button:hover {
   color: #aa2222;
 }
 
-.fa-delete-left:hover{
+.fa-delete-left:hover {
   color: #ff0000;
 }
 
