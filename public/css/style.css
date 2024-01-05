@@ -28,14 +28,14 @@ button:hover {
 
 /* Container */
 .bigger-container {
-  min-height: 100vh;
-  min-width: 100vw;
+  background-color: var(--palette_1);
+  min-height: 100svh;
+  min-width: 100svw;
   display: grid;
   grid-template-areas:
     'header header'
     'menu main'
     'menu main';
-  overflow: hidden;
 }
 
 /* Conteúdo do header */
@@ -201,7 +201,7 @@ button:hover {
 
 .all-projects-txt {
   font-weight: bold;
-  font-size: .9rem;
+  font-size: 1rem;
 }
 
 /* Conteúdo do main */
@@ -211,10 +211,12 @@ button:hover {
   flex-direction: column;
   background-color: var(--palette_1);
   color: var(--palette_4);
-  overflow: auto;
 }
 
-/* Mobile */
+
+/* Responsive Design*/
+
+/* Celular (600px para baixo) */
 @media only screen and (max-width: 600px) {
   .bigger-container {
     display: grid;
@@ -231,18 +233,17 @@ button:hover {
 
   .menu {
     grid-area: menu;
-    height: 90vh;
-    width: 100vw;
+    height: 90svh;
   }
 
   .main {
     grid-area: main;
-    width: 100vw;
-    height: 90vh;
+    height: 100svh;
   }
 }
 
-/*- Laptop - Desktop */
+
+/* Celular/Tablet (600px para cima) */
 @media only screen and (min-width: 600px) {
   .header {
     grid-area: header;
@@ -250,13 +251,51 @@ button:hover {
 
   .menu {
     grid-area: menu;
-    height: 90vh;
-    width: 30vw;
+    height: 90svh;
+    width: 40svw;
   }
 
   .main {
     grid-area: main;
-    height: 90vh;
-    width: 70vw;
+    height: 90svh;
+    width: 60svw;
+  }
+}
+
+/* Tablet/Laptop (992px para cima) */
+@media only screen and (min-width: 992px) {
+  .header {
+    grid-area: header;
+  }
+
+  .menu {
+    grid-area: menu;
+    height: 90svh;
+    width: 30svw;
+  }
+
+  .main {
+    grid-area: main;
+    height: 90svh;
+    width: 70svw;
+  }
+}
+
+/* Laptop/Desktop */
+@media only screen and (min-width: 1200px) {
+  .header {
+    grid-area: header;
+  }
+
+  .menu {
+    grid-area: menu;
+    height: 90svh;
+    width: 20svw;
+  }
+
+  .main {
+    grid-area: main;
+    height: 90svh;
+    width: 80svw;
   }
 }

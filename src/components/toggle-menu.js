@@ -10,8 +10,6 @@ const toggleMenu = (() => {
             menu.style.display = 'flex'
         } else {
             menu.style.display = 'none'
-            header.style.width = '100vw'
-            main.style.width = '100vw'
         }
     })
 })()
