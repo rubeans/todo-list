@@ -44,7 +44,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   background-color: var(--palette_4);
   color: var(--palette_1);
 }
@@ -62,7 +62,7 @@ button:hover {
 }
 
 .header-icons {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .github-link {
@@ -71,7 +71,7 @@ button:hover {
 }
 
 .main-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .github-link {
@@ -100,7 +100,7 @@ button:hover {
 }
 
 .menu-heading {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-decoration: underline;
 }
 
@@ -109,7 +109,7 @@ button:hover {
   gap: .5rem;
   padding: 10px;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 100%;
   background: none;
   font-weight: bold;
@@ -127,7 +127,7 @@ button:hover {
 .project-name-btn,
 .fa-delete-left {
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Top Menu*/
@@ -201,7 +201,7 @@ button:hover {
 
 .all-projects-txt {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 
 /* Conteúdo do main */
