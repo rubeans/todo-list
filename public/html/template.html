@@ -10,9 +10,13 @@
 
 <body class="bigger-container">
   <header class="header">
-    <button class="toggle-menu-btn"><i class="fa-solid fa-bars header-icons"></i></button>
-    <h1 class="main-heading"><%= htmlWebpackPlugin.options.title %></h1>
-    <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github header-icons"></i></a>
+    <div class="left-header">
+      <button class="toggle-menu-btn"><i class="fa-solid fa-bars header-icons"></i></button>
+      <h1 class="main-heading"><%= htmlWebpackPlugin.options.title %></h1>
+    </div>
+    <div class="right-header">
+      <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github header-icons"></i></a>
+    </div>
   </header>
   <sidebar class="menu">
     <div class="top-menu">
@@ -32,7 +36,7 @@
     <div class="bottom-menu">
       <h2 class="menu-heading">Projetos</h2>
       <div class="default-bottom-menu-content">
-        <input class="project-name-input" type="text" placeholder="Novo Projeto" autocomplete="off">
+        <input class="project-name-input" type="text" placeholder="Novo Projeto" autocomplete="off" maxlength="23">
         <button class="add-project-btn"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div class="bottom-menu-content">
