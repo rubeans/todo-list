@@ -236,7 +236,7 @@ button:hover {
 
   .main {
     grid-area: main;
-    height: 100svh;
+    height: 90svh;
   }
 }
 
