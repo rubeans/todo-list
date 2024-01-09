@@ -68,7 +68,7 @@ button:hover {
   color: inherit;
 }
 
-.main-heading {
+.header-heading {
   font-size: 2rem;
 }
 
@@ -115,7 +115,7 @@ button:hover {
 
 .menu-btn:hover,
 .project-name-btn:hover,
-.active-btn {
+.isActive:focus {
   background-color: var(--palette_4);
   color: var(--palette_1);
 }
@@ -212,6 +212,9 @@ button:hover {
   color: var(--palette_4);
 }
 
+.main-heading{
+  font-size: 1.6rem;
+}
 /* Responsive Design*/
 
 /* Celular (600px para baixo) */

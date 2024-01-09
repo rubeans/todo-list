@@ -12,7 +12,7 @@
   <header class="header">
     <div class="left-header">
       <button class="toggle-menu-btn"><i class="fa-solid fa-bars header-icons"></i></button>
-      <h1 class="main-heading"><%= htmlWebpackPlugin.options.title %></h1>
+      <h1 class="header-heading"><%= htmlWebpackPlugin.options.title %></h1>
     </div>
     <div class="right-header">
       <a class="github-link" href="http://github.com/rubeans" target="_blank"><i class="fa-brands fa-github header-icons"></i></a>
@@ -22,13 +22,13 @@
     <div class="top-menu">
       <h2 class="menu-heading">Tarefas</h2>
       <div class="top-menu-content">
-        <div class="inbox">
-          <button class="menu-btn isActive"><i class="fa-solid fa-inbox"></i>Todas</button>
+        <div class="all-tasks">
+          <button class="menu-btn isActive focus"><i class="fa-solid fa-inbox"></i>Todas</button>
         </div>
-        <div class="today-tasks">
+        <div class="week-tasks">
           <button class="menu-btn isActive"><i class="fa-solid fa-calendar-week"></i>Semana</button>
         </div>
-        <div class="completed">
+        <div class="completed-tasks">
           <button class="menu-btn isActive"><i class="fa-solid fa-check-double"></i>Concluídas</button>
         </div>
       </div>
@@ -46,6 +46,7 @@
     </div>
   </sidebar>
   <main class="main">
+    <h1 class="main-heading"><span class="hour-span">Olá</span>, Essa é a sua lista de tarefas.</h1>
     <!-- TODO -->
   </main>
 </body>
