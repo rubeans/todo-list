@@ -1,13 +1,13 @@
-const isActive = document.querySelectorAll('.isActive')
 const main = document.querySelector('.main')
 const mainHeading = document.createElement('h1')
 main.appendChild(mainHeading)
 
 const getActiveBtn = (() => {
-    isActive.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            mainHeading.textContent = btn.textContent
-        })
+    document.body.addEventListener('click', (e) => {
+        const btn = e.target.classList[1] == 'isActive'
+        if (btn) {
+            mainHeading.textContent = e.target.textContent
+        }
     })
 })()
 
