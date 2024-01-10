@@ -115,7 +115,6 @@ button:hover {
 
 .menu-btn:hover,
 .project-name-btn:hover,
-.active-btn,
 .isActive:focus {
   background-color: var(--palette_4);
   color: var(--palette_1);
