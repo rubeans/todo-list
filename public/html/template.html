@@ -46,8 +46,13 @@
     </div>
   </sidebar>
   <main class="main">
-    <h1 class="main-heading"><span class="hour-span">Olá</span>, Essa é a sua lista de tarefas.</h1>
-    <!-- TODO -->
+    <h1 class="main-heading">
+      <script>
+        const hour = new Date().getHours()
+        const greeting = hour >= 5 && hour < 12 ? 'Bom dia' : hour >= 12 && hour <= 18 ? 'Boa tarde' : 'Boa noite';
+        document.write(greeting)
+      </script> 🙂👍
+    </h1>
   </main>
 </body>
 
