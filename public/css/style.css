@@ -114,8 +114,7 @@ button:hover {
 }
 
 .menu-btn:hover,
-.project-name-btn:hover,
-.isActive:focus {
+.project-name-btn:hover {
   background-color: var(--palette_4);
   color: var(--palette_1);
 }
@@ -210,11 +209,13 @@ button:hover {
   align-items: center;
   background-color: var(--palette_1);
   color: var(--palette_4);
+  overflow: auto;
 }
 
-.main-heading{
+.main-heading {
   font-size: 1.6rem;
 }
+
 /* Responsive Design*/
 
 /* Celular (600px para baixo) */
