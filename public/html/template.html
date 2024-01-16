@@ -48,8 +48,8 @@
   <main class="main">
     <h1 class="main-heading">
       <script>
-        const hour = new Date().getHours()
-        const greeting = hour >= 5 && hour < 12 ? 'Bom dia' : hour >= 12 && hour <= 18 ? 'Boa tarde' : 'Boa noite'
+        let hour = new Date().getHours()
+        const greeting = hour >= 0 && hour < 6 ? 'Boa Madrugada' : hour >= 6 && hour < 12 ? 'Bom dia' : hour >= 12 && hour <= 18 ? 'Boa tarde' : 'Boa noite'
         document.write(greeting)
       </script> 🙂
     </h1>
