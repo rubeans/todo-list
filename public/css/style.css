@@ -216,6 +216,11 @@ button:hover {
   font-size: 1.6rem;
 }
 
+.task-form{
+  display: flex;
+  flex-direction: column;
+}
+
 /* Responsive Design*/
 
 /* Celular (600px para baixo) */
