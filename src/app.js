@@ -1,5 +1,5 @@
 // Importar arquivos
 import style from '../public/css/style.css'
-import toggleMenu from './components/toggle-menu.js'
-import addProject from './components/add-project.js'
-import getActiveBtn from './components/getActiveBtn.js'
+import toggleMenu from './modules/toggleMenu.js'
+import addProject from './modules/addProject.js'
+import getActiveBtn from './modules/handleClicks.js'
