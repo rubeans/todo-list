@@ -17,7 +17,7 @@ const addProject = (() => {
         } else {
             bottomMenuContent.insertAdjacentHTML('beforeend',
                 `<div class="project">
-                    <button class="project-name-btn btns">${capitalize(projectNameInput.value)}</button>
+                    <button class="project-btn btns">${capitalize(projectNameInput.value)}</button>
                     <i class="fa-solid fa-delete-left" onclick="return this.parentNode.remove();"></i>
                 </div>`
             )
