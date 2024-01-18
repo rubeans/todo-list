@@ -153,10 +153,6 @@ button:hover {
   font-weight: bold;
 }
 
-.project-name-input::placeholder {
-  color: var(--palette_4);
-}
-
 .add-project-btn {
   justify-content: center;
   width: 15%;
@@ -203,10 +199,6 @@ button:hover {
 
 /* Conteúdo do main */
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
   background-color: var(--palette_1);
   color: var(--palette_4);
   padding: 20px;
@@ -214,10 +206,12 @@ button:hover {
 }
 
 .main-heading {
+  text-align: center;
   font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
-.task-field{
+.task-field {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -226,11 +220,17 @@ button:hover {
 
 .open-modal {
   display: flex;
-  justify-content: center;
+  gap: 10px;
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2rem;
-  width: 50%;
+  width: 60%;
+  font-weight: bold;
+  background-color: var(--palette_1);
+  color: var(--palette_4);
+}
+
+.open-modal:hover {
   background-color: var(--palette_4);
   color: var(--palette_1);
 }
@@ -244,16 +244,62 @@ button:hover {
   transform: translateX(-50%) translateY(-50%);
   border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
+  background-color: var(--palette_1);
 }
 
 .modal::backdrop {
-  background-color: #31304d75;
+  background-color: #31304dbe;
+}
+
+.close-modal {
+  align-self: flex-end;
+  font-size: 1.25rem;
+  background: none;
 }
 
 .task-form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid var(--palette_4);
+  outline: none;
+}
+
+.task-form label,
+.task-form .task-title,
+.task-form textarea {
+  font-size: 1.2rem;
+  color: var(--palette_4);
+  font-weight: bold;
+}
+
+.task-form .task-title,
+.task-form textarea {
+  background-color: var(--palette_1);
+}
+
+.task-form select,
+.task-form .date-input {
+  font-size: 1.1rem;
+  width: 100%;
+  background: none;
+}
+
+.add-task-btn {
+  align-self: center;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  background-color: var(--palette_4);
+  color: var(--palette_1);
 }
 
 /* Responsive Design*/
@@ -280,7 +326,7 @@ button:hover {
 
   .main {
     grid-area: main;
-    height: 90svh;
+    height: 100svh;
   }
 }
 
@@ -299,7 +345,7 @@ button:hover {
 
   .main {
     grid-area: main;
-    height: 90svh;
+    height: 100svh;
     width: 60svw;
   }
 }

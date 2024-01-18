@@ -48,22 +48,22 @@
   <main class="main">
     <h1 class="main-heading">
       <script>
-        let hour = new Date().getHours()
+        const hour = new Date().getHours()
         const greeting = hour >= 0 && hour < 6 ? 'Boa Madrugada' : hour >= 6 && hour < 12 ? 'Bom dia' : hour >= 12 && hour <= 18 ? 'Boa tarde' : 'Boa noite'
-        document.write(greeting)
-      </script> 🙂
+        document.write(`Olá, ${greeting}.`)
+      </script> 
     </h1>
     <div class="task-field">
-      <button class="open-modal">Nova Tarefa</button>
+      <button class="open-modal"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
       <dialog id="modal" class="modal">
         <form class="task-form" method="dialog">
           <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
-          <input class="task-name-input" type="text" placeholder="Titulo">
-          <textarea cols="30" rows="10" class="task-description" placeholder="Descrição"></textarea>
-          <div class="separate-item-inside-form">
-            <label for="date">Data de Vencimento:<input id="date" type="date"></label>
+          <input class="task-title" type="text" placeholder="Título" required>
+          <textarea rows="3" class="task-description" placeholder="Descrição" required></textarea>
+          <div class="separate-items-inside-form">
+            <label for="date">Data de Vencimento: <input class="date-input" id="date" type="date"></label>
           </div>
-          <div class="separate-item-inside-form">
+          <div class="separate-items-inside-form">
             <label for="priorities">Prioridade:
               <select id="priorities" class="priorities">
                 <option value="Baixa">Baixa</option>
@@ -76,7 +76,7 @@
         </form>
       </dialog>
       <div class="added-tasks">
-
+        <!-- TODO -->
       </div>
     </div>
   </main>
