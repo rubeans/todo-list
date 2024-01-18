@@ -54,20 +54,30 @@
       </script> 🙂
     </h1>
     <div class="task-field">
-      <form class="task-form" method="dialog">
-        <input class="task-name-input" type="text" placeholder="Titulo">
-        <textarea cols="30" rows="10" class="task-description" placeholder="Descrição"></textarea>
-        <label for="date">Data de Vencimento:<input id="date" type="date"></label>
-        <label for="priorities">Prioridade:</label>
-          <select id="priorities" class="priorities">
-            <option value="Baixa">Baixa</option>
-            <option value="Média">Média</option>
-            <option value="Alta">Alta</option>
-          </select>
-        <button class="add-task-btn"><i class="fa-solid fa-plus"></i></button>
-      </form>
-    </div>
-    <div class="added-tasks">
+      <button class="open-modal">Nova Tarefa</button>
+      <dialog id="modal" class="modal">
+        <form class="task-form" method="dialog">
+          <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+          <input class="task-name-input" type="text" placeholder="Titulo">
+          <textarea cols="30" rows="10" class="task-description" placeholder="Descrição"></textarea>
+          <div class="separate-item-inside-form">
+            <label for="date">Data de Vencimento:<input id="date" type="date"></label>
+          </div>
+          <div class="separate-item-inside-form">
+            <label for="priorities">Prioridade:
+              <select id="priorities" class="priorities">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </label>
+          </div>
+          <button class="add-task-btn">Adicionar</button>
+        </form>
+      </dialog>
+      <div class="added-tasks">
+
+      </div>
     </div>
   </main>
 </body>

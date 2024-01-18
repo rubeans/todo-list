@@ -114,14 +114,14 @@ button:hover {
 }
 
 .menu-btn:hover,
-.project-name-btn:hover {
+.project-btn:hover {
   background-color: var(--palette_4);
   color: var(--palette_1);
 }
 
 .project-name-input,
 .add-project-btn,
-.project-name-btn,
+.project-btn,
 .fa-delete-left {
   padding: 10px;
   font-size: 1rem;
@@ -173,7 +173,7 @@ button:hover {
   overflow: auto;
 }
 
-.project-name-btn {
+.project-btn {
   width: 85%;
   border-radius: 5px;
   background-color: var(--palette_2);
@@ -203,12 +203,13 @@ button:hover {
 
 /* Conteúdo do main */
 .main {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2.5rem;
   background-color: var(--palette_1);
   color: var(--palette_4);
+  padding: 20px;
   overflow: auto;
 }
 
@@ -216,7 +217,41 @@ button:hover {
   font-size: 1.6rem;
 }
 
-.task-form{
+.task-field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.open-modal {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 50%;
+  background-color: var(--palette_4);
+  color: var(--palette_1);
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.modal::backdrop {
+  background-color: #31304d75;
+}
+
+.task-form {
   display: flex;
   flex-direction: column;
 }
