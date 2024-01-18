@@ -23,13 +23,13 @@
       <h2 class="menu-heading">Tarefas</h2>
       <div class="top-menu-content">
         <div class="all-tasks">
-          <button class="menu-btn btns"><i class="fa-solid fa-inbox"></i>Todas</button>
+          <button class="menu-btn all-tasks-btn"><i class="fa-solid fa-inbox"></i>Todas</button>
         </div>
         <div class="week-tasks">
-          <button class="menu-btn btns"><i class="fa-solid fa-calendar-week"></i>Semana</button>
+          <button class="menu-btn week-tasks-btn"><i class="fa-solid fa-calendar-week"></i>Semana</button>
         </div>
         <div class="completed-tasks">
-          <button class="menu-btn btns"><i class="fa-solid fa-check-double"></i>Concluídas</button>
+          <button class="menu-btn completed-tasks-btn"><i class="fa-solid fa-check-double"></i>Concluídas</button>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
         <button class="add-project-btn"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div class="bottom-menu-content">
-        <p class="all-projects-txt" hidden>// Criados</p>
+        <p class="projects-created-txt" hidden>// Criados</p>
         <!-- Gerado com javascript -->
       </div>
     </div>
@@ -51,10 +51,10 @@
         const hour = new Date().getHours()
         const greeting = hour >= 0 && hour < 6 ? 'Boa Madrugada' : hour >= 6 && hour < 12 ? 'Bom dia' : hour >= 12 && hour <= 18 ? 'Boa tarde' : 'Boa noite'
         document.write(`Olá, ${greeting}.`)
-      </script> 
+      </script>
     </h1>
     <div class="task-field">
-      <button class="open-modal"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+      <button class="open-modal" style="display: none;"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
       <dialog id="modal" class="modal">
         <form class="task-form" method="dialog">
           <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
