@@ -1,16 +1,26 @@
-import { addProject, getInputValue } from './addProject.js'
-const taskField = document.querySelector('.task-field')
+const heading = document.querySelector('.main-heading')
 const openModalBtn = document.querySelector('.open-modal')
 
-
-const handleClicks = (() => {
+// Pegar os clicks nos botões do projeto
+const projectBtn = (() => {
     document.body.addEventListener('click', (e) => {
         const btns = e.target.closest('.project-btn')
         if (btns) {
-            console.log(getInputValue)
+            heading.textContent = btns.textContent
             openModalBtn.style.display = 'flex'
         }
     })
 })()
 
-export default handleClicks
+// Pegar os clicks nos botões do menu
+const menuBtn = (() => {
+    document.body.addEventListener('click', (e) => {
+        const btns = e.target.closest('.menu-btn')
+        if (btns) {
+            heading.textContent = btns.textContent
+            openModalBtn.style.display = 'none'
+        }
+    })
+})()
+
+export { projectBtn, menuBtn }

@@ -2,7 +2,6 @@ const projectNameInput = document.querySelector('.project-name-input')
 const addProjectBtn = document.querySelector('.add-project-btn')
 const bottomMenuContent = document.querySelector('.bottom-menu-content')
 const allProjectsTxt = document.querySelector('.projects-created-txt')
-let getInputValue
 
 function capitalize(s) {
     return s && s[0].toUpperCase() + s.slice(1);
@@ -22,7 +21,6 @@ const addProject = (() => {
                     <i class="fa-solid fa-delete-left" onclick="return this.parentNode.remove();"></i>
                 </div>`
             )
-            getInputValue = `${capitalize(projectNameInput.value)}`
             allProjectsTxt.hidden = false
             projectNameInput.value = ''
             projectNameInput.type = 'reset'
@@ -31,4 +29,4 @@ const addProject = (() => {
     })
 })()
 
-export { addProject, getInputValue }
+export default addProject
