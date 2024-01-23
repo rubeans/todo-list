@@ -5,6 +5,7 @@ const closeModal = document.querySelector('.close-modal')
 const modalFunctionality = (() => {
     openModal.addEventListener('click', () => {
         modal.showModal()
+        document.querySelector('.date-input').type = 'date'
     })
 
     closeModal.addEventListener('click', () => {

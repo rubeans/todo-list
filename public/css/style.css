@@ -153,6 +153,10 @@ button:hover {
   font-weight: bold;
 }
 
+.project-name-input::placeholder{
+  color: #161a30ba;
+}
+
 .add-project-btn {
   justify-content: center;
   width: 15%;
@@ -265,8 +269,11 @@ button:hover {
   gap: 15px;
 }
 
+.task-form .task-title {
+  background-color: var(--palette_1);
+}
+
 .task-form input,
-.task-form textarea,
 .task-form select {
   border-radius: 5px;
   padding: 2px 5px;
@@ -275,16 +282,12 @@ button:hover {
 }
 
 .task-form label,
-.task-form .task-title,
-.task-form textarea {
+.task-form .task-title {
   font-size: 1.2rem;
   color: var(--palette_4);
   font-weight: bold;
-}
-
-.task-form .task-title,
-.task-form textarea {
-  background-color: var(--palette_1);
+  display: block;
+  width: 100%;
 }
 
 .task-form select,
