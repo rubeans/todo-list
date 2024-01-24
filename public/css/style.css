@@ -219,7 +219,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -304,6 +304,19 @@ button:hover {
   font-size: 1.3rem;
   background-color: var(--palette_4);
   color: var(--palette_1);
+}
+
+.tasks-added{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Responsive Design*/
