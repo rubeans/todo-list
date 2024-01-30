@@ -20,8 +20,8 @@ const addTask = (() => {
         tasksAdded.insertAdjacentHTML('beforeend',
             `<div class="task">
                 <div class="left-side-task">
-                    <input type="checkbox" id="${todo.title.value}" value="${todo.title.value}">
-                    <label for="${todo.title.value}">${todo.title.value}</label>
+                    <input class="input-task" type="checkbox" value="${todo.title.value}">
+                    <label >${todo.title.value}</label>
                 </div> 
                 <div class='right-side-task'>
                     ${todo.dueDate.value}, Prioridade: ${todo.priority.value}
@@ -32,4 +32,18 @@ const addTask = (() => {
     })
 })()
 
-export default addTask
+// Pegar os clicks nos botões do menu
+const heading = document.querySelector('.main-heading')
+const openModalBtn = document.querySelector('.open-modal')
+const menuBtn = (() => {
+    document.body.addEventListener('click', (e) => {
+        const btns = e.target.closest('.menu-btn')
+        if (btns) {
+            heading.textContent = btns.textContent
+            openModalBtn.style.display = 'none'
+        }
+    })
+})()
+
+
+export { addTask, menuBtn }

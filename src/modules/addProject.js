@@ -17,7 +17,7 @@ const addProject = (() => {
         } else {
             bottomMenuContent.insertAdjacentHTML('beforeend',
                 `<div class="project">
-                    <button class="project-btn">${capitalize(projectNameInput.value)}</button>
+                    <button id="${projectNameInput.value}" class="project-btn">${capitalize(projectNameInput.value)}</button>
                     <i class="fa-solid fa-delete-left" onclick="return this.parentNode.remove();"></i>
                 </div>`
             )
@@ -29,4 +29,17 @@ const addProject = (() => {
     })
 })()
 
-export default addProject
+// Pegar os clicks nos botões do projeto
+const heading = document.querySelector('.main-heading')
+const openModalBtn = document.querySelector('.open-modal')
+const projectBtn = (() => {
+    document.body.addEventListener('click', (e) => {
+        const btns = e.target.closest('.project-btn')
+        if (btns) {
+            heading.textContent = btns.textContent
+            openModalBtn.style.display = 'flex'
+        }
+    })
+})()
+
+export { addProject, projectBtn }

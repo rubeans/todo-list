@@ -1,5 +1,3 @@
-const header = document.querySelector('.header')
-const main = document.querySelector('.main')
 const menu = document.querySelector('.menu')
 const toggleMenuBtn = document.querySelector('.toggle-menu-btn')
 
