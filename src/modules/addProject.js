@@ -2,30 +2,42 @@ const projectNameInput = document.querySelector('.project-name-input')
 const addProjectBtn = document.querySelector('.add-project-btn')
 const bottomMenuContent = document.querySelector('.bottom-menu-content')
 const allProjectsTxt = document.querySelector('.projects-created-txt')
+let inputValue = []
 
 function capitalize(s) {
     return s && s[0].toUpperCase() + s.slice(1);
 }
 
+function checkIfDuplicateExists(arr) {
+    return new Set(arr).size !== arr.length
+}
+
 const addProject = (() => {
     addProjectBtn.addEventListener('click', () => {
+        inputValue.push(projectNameInput.value)
         // Não adicionar se o input tiver vazio
         if (!projectNameInput.value || projectNameInput.value === ' ') {
             alert('Não é póssivel adicionar um projeto sem um nome.')
             return
-            // Adicionar se não tiver
-        } else {
+        }
+        // Caso coloque um nome repetido
+        else if (checkIfDuplicateExists(inputValue)) {
+            inputValue = []
+            alert('Já tem um projeto com o mesmo nome')
+        }
+        // Adicionar se não tiver
+        else {
             bottomMenuContent.insertAdjacentHTML('beforeend',
                 `<div class="project">
                     <button id="${projectNameInput.value}" class="project-btn">${capitalize(projectNameInput.value)}</button>
                     <i class="fa-solid fa-delete-left" onclick="return this.parentNode.remove();"></i>
-                </div>`
-            )
-            allProjectsTxt.hidden = false
-            projectNameInput.value = ''
-            projectNameInput.type = 'reset'
-            projectNameInput.type = 'text'
+                </div>`)
         }
+        console.log(checkIfDuplicateExists(inputValue))
+        allProjectsTxt.hidden = false
+        projectNameInput.value = ''
+        projectNameInput.type = 'reset'
+        projectNameInput.type = 'text'
     })
 })()
 
