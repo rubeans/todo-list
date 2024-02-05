@@ -13,7 +13,7 @@ const addTask = (() => {
         if (!todo.dueDate.value) {
             todo.dueDate.type = 'text'
             todo.dueDate.value = 'Sem data definida'
-        } if (!todo.title.value || todo.title.value === ' ') {
+        } if (!todo.title.value.trim().length) {
             alert('Não é póssivel adicionar uma tarefa sem um título.')
             return
         }
@@ -34,13 +34,11 @@ const addTask = (() => {
 
 // Pegar os clicks nos botões do menu
 const heading = document.querySelector('.main-heading')
-const openModalBtn = document.querySelector('.open-modal')
 const menuBtn = (() => {
     document.body.addEventListener('click', (e) => {
         const btns = e.target.closest('.menu-btn')
         if (btns) {
             heading.textContent = btns.textContent
-            openModalBtn.style.display = 'none'
         }
     })
 })()

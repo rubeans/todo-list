@@ -1,7 +1,6 @@
 const projectNameInput = document.querySelector('.project-name-input')
 const addProjectBtn = document.querySelector('.add-project-btn')
 const bottomMenuContent = document.querySelector('.bottom-menu-content')
-let inputValue = []
 
 function capitalize(s) {
     return s && s[0].toUpperCase() + s.slice(1);
@@ -9,7 +8,6 @@ function capitalize(s) {
 
 const addProject = (() => {
     addProjectBtn.addEventListener('click', () => {
-        inputValue.push(projectNameInput.value)
         // Não adicionar se o input tiver vazio
         if (!projectNameInput.value.trim().length) {
             alert('Não é póssivel adicionar um projeto sem um nome.')
@@ -31,11 +29,13 @@ const addProject = (() => {
 // Pegar os clicks nos botões do projeto
 const heading = document.querySelector('.main-heading')
 const openModalBtn = document.querySelector('.open-modal')
+const projectName = document.querySelector('#test')
 const projectBtn = (() => {
     document.body.addEventListener('click', (e) => {
         const btns = e.target.closest('.project-btn')
         if (btns) {
-            
+            heading.textContent = btns.textContent
+            openModalBtn.style.display = 'flex'
         }
     })
 })()
