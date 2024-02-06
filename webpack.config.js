@@ -12,7 +12,7 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         port: 5001, //default 8080
-        open: true,
+        open: false,
         hot: true
     },
     //plugins

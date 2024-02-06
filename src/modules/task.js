@@ -18,9 +18,9 @@ const addTask = (() => {
             return
         }
         tasksAdded.insertAdjacentHTML('beforeend',
-            `<div class="task">
+            `<div id="${todo.title.value}" class="task">
                 <div class="left-side-task">
-                    <input class="input-task" type="checkbox" value="${todo.title.value}">
+                    <input class="task-input" type="checkbox" value="${todo.title.value}">
                     <label >${todo.title.value}</label>
                 </div> 
                 <div class='right-side-task'>
