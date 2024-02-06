@@ -11,9 +11,7 @@ Esse menu pode ser fechado e aberto apertando no botão de menu ao lado do titú
 ## Design Responsivo
 
 ### Mobile
-![mobile opened menu](./public/img/image.png) 
-
-![mobile closed menu](./public/img/image-1.png)
+![mobile opened menu](./public/img/image.png) ![mobile closed menu](./public/img/image-1.png)
 ### Desktop
 ![desktop opened menu](./public/img/image-2.png)
 
