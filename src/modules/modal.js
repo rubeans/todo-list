@@ -5,6 +5,7 @@ const closeModal = document.querySelector('.close-modal')
 const modalFunctionality = (() => {
     openModal.addEventListener('click', () => {
         modal.showModal()
+        // corrigir o erro quando a data não for especificada
         document.querySelector('.date-input').type = 'date'
     })
 

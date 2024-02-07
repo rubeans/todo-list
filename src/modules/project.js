@@ -6,6 +6,7 @@ let projectCount = []
 function capitalize(s) {
     return s && s[0].toUpperCase() + s.slice(1);
 }
+
 function checkIfDuplicateExists(arr) {
     return new Set(arr).size !== arr.length
 }
@@ -22,7 +23,8 @@ const addProject = (() => {
             projectContainer.classList.add('project')
             projectContainer.id = `${projectNameInput.value}`
             projectCount.push(projectContainer.id)
-            console.log(projectCount)
+            // console.log(projectCount)
+
             // Verificar se existe nomes de projetos iguais
             if (checkIfDuplicateExists(projectCount)) {
                 alert('Já tem um projeto com esse nome.')
@@ -49,9 +51,12 @@ const getProjectClicks = (() => {
     document.body.addEventListener('click', (e) => {
         const projectBtn = e.target.closest('.project-btn')
         const removeProjectBtn = e.target.closest('.fa-delete-left')
+        // Mostrar o conteudo na div main
         if (projectBtn) {
             // TODO
-        } else if (removeProjectBtn) {
+        }
+        // Deletar um projeto
+        else if (removeProjectBtn) {
             const projectToBeDeleted = removeProjectBtn.parentNode.id
             const confirmDelete = confirm(`O projeto "${capitalize(projectToBeDeleted)}" será excluido permanentemente.`)
             if (confirmDelete) {
