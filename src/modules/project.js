@@ -45,18 +45,21 @@ const addProject = (() => {
 })()
 
 // Pegar os clicks nos botões do projeto
-const heading = document.querySelector('.main-heading')
-const openModalBtn = document.querySelector('.open-modal')
 const getProjectClicks = (() => {
     document.body.addEventListener('click', (e) => {
         const projectBtn = e.target.closest('.project-btn')
         const removeProjectBtn = e.target.closest('.fa-delete-left')
         if (projectBtn) {
-            console.log('projeto clickado')
             // TODO
         } else if (removeProjectBtn) {
-            console.log('botão de remover clickado!')
-            // TODO
+            const projectToBeDeleted = removeProjectBtn.parentNode.id
+            const confirmDelete = confirm(`O projeto "${capitalize(projectToBeDeleted)}" será excluido permanentemente.`)
+            if (confirmDelete) {
+                removeProjectBtn.parentNode.remove();
+                projectCount = projectCount.filter(removeProjectBtn => removeProjectBtn !== projectToBeDeleted)
+                // console.log('botão deleteado: ' + projectToBeDeleted)
+                // console.log(projectCount)
+            }
         }
     })
 })()
