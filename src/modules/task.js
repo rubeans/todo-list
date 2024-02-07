@@ -34,7 +34,7 @@ const addTask = (() => {
 
 // Pegar os clicks nos botões do menu
 const heading = document.querySelector('.main-heading')
-const menuBtn = (() => {
+const getMenuClicks = (() => {
     document.body.addEventListener('click', (e) => {
         const btns = e.target.closest('.menu-btn')
         if (btns) {
@@ -44,4 +44,4 @@ const menuBtn = (() => {
 })()
 
 
-export { addTask, menuBtn }
+export { addTask, getMenuClicks }

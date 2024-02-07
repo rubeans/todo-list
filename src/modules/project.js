@@ -33,7 +33,7 @@ const addProject = (() => {
             else {
                 projectContainer.insertAdjacentHTML('afterbegin', `
                     <button class="project-btn">${capitalize(projectNameInput.value)}</button>
-                    <i class="fa-solid fa-delete-left" onclick="return this.parentNode.remove();"></i>
+                    <i class="fa-solid fa-delete-left"></i>
                 `)
                 bottomMenuContent.append(projectContainer)
                 projectNameInput.value = ''
@@ -47,14 +47,18 @@ const addProject = (() => {
 // Pegar os clicks nos botões do projeto
 const heading = document.querySelector('.main-heading')
 const openModalBtn = document.querySelector('.open-modal')
-const projectBtn = (() => {
+const getProjectClicks = (() => {
     document.body.addEventListener('click', (e) => {
-        const btns = e.target.closest('.project-btn')
-        if (btns) {
-            heading.textContent = btns.textContent
-            openModalBtn.style.display = 'flex'
+        const projectBtn = e.target.closest('.project-btn')
+        const removeProjectBtn = e.target.closest('.fa-delete-left')
+        if (projectBtn) {
+            console.log('projeto clickado')
+            // TODO
+        } else if (removeProjectBtn) {
+            console.log('botão de remover clickado!')
+            // TODO
         }
     })
 })()
 
-export { addProject, projectBtn }
+export { addProject, getProjectClicks }
