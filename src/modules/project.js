@@ -33,8 +33,8 @@ const addProject = (() => {
             }
             // Caso não tenha, o projecto vai ser adicionado
             else {
-                projectContainer.insertAdjacentHTML('afterbegin', `
-                    <button class="project-btn">${capitalize(projectNameInput.value)}</button>
+                projectContainer.insertAdjacentHTML('beforeend', `
+                    <button class="project-btn ${projectNameInput.value}">${capitalize(projectNameInput.value)}</button>
                     <i class="fa-solid fa-delete-left"></i>
                 `)
                 bottomMenuContent.append(projectContainer)
@@ -53,7 +53,38 @@ const getProjectClicks = (() => {
         const removeProjectBtn = e.target.closest('.fa-delete-left')
         // Mostrar o conteudo na div main
         if (projectBtn) {
-            // TODO
+            const main = document.querySelector('.main')
+            const taskField = document.createElement('div')
+            taskField.id = `${projectBtn.classList[1]}`
+            taskField.classList.add('task-field')
+            taskField.insertAdjacentHTML('beforeend', `
+                <button class="open-modal" onclick="document.querySelector('#modal').showModal()"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
+                <dialog id="modal" class="modal">
+                <form class="task-form" method="dialog">
+                    <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="separate-items-inside-form">
+                    <label for="title">Título<input id="title" class="task-title" type="text" autofocus></label>
+                    </div>
+                    <div class="separate-items-inside-form">
+                    <label for="date">Data de Vencimento: <input class="date-input" id="date" type="date"></label>
+                    </div>
+                    <div class="separate-items-inside-form">
+                    <label for="priorities">Prioridade:
+                        <select id="priorities" class="priorities">
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                        </select>
+                    </label>
+                    </div>
+                    <button class="add-task-btn">Adicionar</button>
+                </form>
+                </dialog>
+                <div class="tasks-added">
+                // TODO
+                </div>
+            `)
+            main.append(taskField)
         }
         // Deletar um projeto
         else if (removeProjectBtn) {
