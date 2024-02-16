@@ -240,7 +240,7 @@ button:hover {
   color: var(--palette_1);
 }
 
-.modal {
+#modal {
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -253,7 +253,7 @@ button:hover {
   background-color: var(--palette_1);
 }
 
-.modal::backdrop {
+#modal::backdrop {
   background-color: #31304dbe;
 }
 
