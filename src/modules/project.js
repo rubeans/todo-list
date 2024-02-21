@@ -1,3 +1,9 @@
+// Variaveis globais
+const projectNameInput = document.querySelector('.project-name-input')
+const addProjectBtn = document.querySelector('.add-project-btn')
+const bottomMenuContent = document.querySelector('.bottom-menu-content')
+
+// Arrays
 let projectCount = []
 let storedProject = []
 let taskFieldCount = []
@@ -10,11 +16,8 @@ function checkIfDuplicateExists(arr) {
     return new Set(arr).size !== arr.length
 }
 
+// Adicionar novo projeto
 const addProject = (() => {
-    const projectNameInput = document.querySelector('.project-name-input')
-    const addProjectBtn = document.querySelector('.add-project-btn')
-    const bottomMenuContent = document.querySelector('.bottom-menu-content')
-
     addProjectBtn.addEventListener('click', () => {
         // Não adicionar se o input tiver vazio
         if (!projectNameInput.value.trim().length) {
@@ -26,26 +29,31 @@ const addProject = (() => {
             projectContainer.classList.add('project')
             projectContainer.id = `${projectNameInput.value}`
             projectCount.push(projectContainer.id)
-            storedProject.push(projectNameInput.value)
             // console.log(projectCount)
             // console.log(storedProject)
 
             // Verificar se existe nomes de projetos iguais
-            if (checkIfDuplicateExists(projectCount)) {
+            if (checkIfDuplicateExists(projectCount) || checkIfDuplicateExists(storedProject)) { // TODO
                 alert('Já tem um projeto com esse nome.')
                 projectCount.pop()
                 projectNameInput.focus()
             }
             // Caso não tenha, o projecto vai ser adicionado
             else {
-                const showAsJSON = JSON.stringify(storedProject)
-                localStorage.setItem('projeto', showAsJSON)
-                const savedProject = JSON.parse(localStorage.getItem('projeto'))
-                const currentProject = savedProject[savedProject.length - 1]
+                const new_data = projectNameInput.value
+                if (localStorage.getItem('projeto') === null) {
+                    localStorage.setItem('projeto', '[]')
+                }
+
+                const old_data = JSON.parse(localStorage.getItem('projeto'))
+                old_data.push(new_data)
+
+                localStorage.setItem('projeto', JSON.stringify(old_data))
+
                 // console.log(savedProject)
                 // console.log(getLastProject)
                 projectContainer.insertAdjacentHTML('beforeend', `
-                    <button class="project-btn ${projectNameInput.value}">${capitalize(currentProject)}</button>
+                    <button class="project-btn ${projectNameInput.value}">${capitalize(projectNameInput.value)}</button>
                     <i class="fa-solid fa-delete-left"></i>
                 `)
                 bottomMenuContent.append(projectContainer)
@@ -55,6 +63,32 @@ const addProject = (() => {
             }
         }
     })
+})()
+
+// Carregar projetos que ja foram adicionados antes
+const loadSavedProjects = (() => {
+    if (localStorage.getItem('projeto')) {
+        storedProject = JSON.parse(localStorage.getItem('projeto'))
+        storedProject.forEach(project => {
+            console.log(project)
+
+            const projectContainer = document.createElement('div')
+            projectContainer.classList.add('project')
+            projectContainer.id = `${projectNameInput.value}`
+            projectCount.push(projectContainer.id)
+            // console.log(projectCount)
+            // console.log(storedProject)
+            // Caso não tenha, o projecto vai ser adicionado
+                projectContainer.insertAdjacentHTML('beforeend', `
+                    <button class="project-btn ${projectNameInput.value}">${capitalize(project)}</button>
+                    <i class="fa-solid fa-delete-left"></i>
+                `)
+                bottomMenuContent.append(projectContainer)
+                projectNameInput.value = ''
+                projectNameInput.type = 'reset'
+                projectNameInput.type = 'text'
+        })
+    }
 })()
 
 // Pegar os clicks nos botões do projeto
@@ -95,7 +129,7 @@ const getProjectClicks = (() => {
             //     </dialog>
             //     <div class="tasks-added">
             //     </div>
-            // `)
+            // `) // TODO
         }
         // Deletar um projeto
         else if (removeProjectBtn) {
@@ -110,5 +144,3 @@ const getProjectClicks = (() => {
         }
     })
 })()
-
-export { addProject, getProjectClicks }
