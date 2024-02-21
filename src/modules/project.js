@@ -1,4 +1,5 @@
 let projectCount = []
+let storedProject = []
 let taskFieldCount = []
 
 function capitalize(s) {
@@ -25,7 +26,9 @@ const addProject = (() => {
             projectContainer.classList.add('project')
             projectContainer.id = `${projectNameInput.value}`
             projectCount.push(projectContainer.id)
+            storedProject.push(projectNameInput.value)
             // console.log(projectCount)
+            // console.log(storedProject)
 
             // Verificar se existe nomes de projetos iguais
             if (checkIfDuplicateExists(projectCount)) {
@@ -35,8 +38,14 @@ const addProject = (() => {
             }
             // Caso não tenha, o projecto vai ser adicionado
             else {
+                const showAsJSON = JSON.stringify(storedProject)
+                localStorage.setItem('projeto', showAsJSON)
+                const savedProject = JSON.parse(localStorage.getItem('projeto'))
+                const currentProject = savedProject[savedProject.length - 1]
+                // console.log(savedProject)
+                // console.log(getLastProject)
                 projectContainer.insertAdjacentHTML('beforeend', `
-                    <button class="project-btn ${projectNameInput.value}">${capitalize(projectNameInput.value)}</button>
+                    <button class="project-btn ${projectNameInput.value}">${capitalize(currentProject)}</button>
                     <i class="fa-solid fa-delete-left"></i>
                 `)
                 bottomMenuContent.append(projectContainer)
