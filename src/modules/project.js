@@ -81,7 +81,7 @@ const getProjectClicks = (() => {
         // Mostrar o conteudo na div main
         if (projectBtn) {
             document.querySelector('.open-modal').style.display='flex'
-        }
+        } //TODO
 
         // Deletar um projeto
         else if (removeProjectBtn) {
@@ -92,7 +92,7 @@ const getProjectClicks = (() => {
                 newAddedProject = newAddedProject.filter(removeProjectBtn => removeProjectBtn !== projectToBeDeleted)
                 // console.log('botão deleteado: ' + projectToBeDeleted)
                 // console.log(newAddedProject)
-            }
+            } //TODO
         }
     })
 })()
