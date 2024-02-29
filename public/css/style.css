@@ -85,35 +85,19 @@ button:hover {
   color: var(--palette_4);
 }
 
-.top-menu,
-.bottom-menu {
+.project-content {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.bottom-menu {
   overflow: auto;
 }
 
-.menu-heading {
+.project-heading {
   font-size: 1.4rem;
   text-decoration: underline;
 }
 
-.menu-btn {
-  color: var(--palette_4);
-  gap: .5rem;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
-  width: 100%;
-  background: none;
-  font-weight: bold;
-}
-
-.menu-btn:hover,
 .project-btn:hover {
   background-color: var(--palette_4);
   color: var(--palette_1);
@@ -127,16 +111,7 @@ button:hover {
   font-size: 1rem;
 }
 
-/* Top Menu*/
-.top-menu-content {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  overflow: auto;
-}
-
-/* Bottom Menu*/
-.default-bottom-menu-content,
+.project-input-field,
 .project {
   display: flex;
   align-items: center;
@@ -166,7 +141,7 @@ button:hover {
   color: var(--palette_1);
 }
 
-.bottom-menu-content {
+.bottom-project-content {
   display: flex;
   flex-direction: column;
   gap: .5rem;

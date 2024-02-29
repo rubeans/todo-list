@@ -1,13 +1,11 @@
 // Variaveis globais
 const projectNameInput = document.querySelector('.project-name-input')
 const addProjectBtn = document.querySelector('.add-project-btn')
-const bottomMenuContent = document.querySelector('.bottom-menu-content')
+const bottomProjectContent = document.querySelector('.bottom-project-content')
 
 // Arrays
 let newAddedProject = []
 let storedProjects = []
-let getStoredProjects = []
-let taskFieldCount = []
 
 function capitalize(s) {
     return s && s[0].toUpperCase() + s.slice(1);
@@ -47,7 +45,7 @@ const addProject = (() => {
                     <button class="project-btn">${capitalize(projectNameInput.value)}</button>
                     <i class="fa-solid fa-delete-left"></i>
                 `)
-            bottomMenuContent.append(projectContainer)
+            bottomProjectContent.append(projectContainer)
             projectNameInput.value = ''
             projectNameInput.type = 'reset'
             projectNameInput.type = 'text'
@@ -69,7 +67,7 @@ const loadSavedProjects = (() => {
                     <button class="project-btn">${capitalize(project)}</button>
                     <i class="fa-solid fa-delete-left"></i>
                 `)
-            bottomMenuContent.append(projectContainer)
+            bottomProjectContent.append(projectContainer)
         })
     }
 })()
@@ -79,40 +77,10 @@ const getProjectClicks = (() => {
     document.body.addEventListener('click', (e) => {
         const projectBtn = e.target.closest('.project-btn')
         const removeProjectBtn = e.target.closest('.fa-delete-left')
+
         // Mostrar o conteudo na div main
         if (projectBtn) {
-            const main = document.querySelector('.main')
-            const taskField = document.createElement('div')
-            taskField.id = `${projectBtn.classList[1]}-field`
-            taskField.classList.add('task-field')
-            taskFieldCount.push(taskField)
-            main.append(taskField)
-            // taskField.insertAdjacentHTML('beforeend', `
-            //     <button class="open-modal" onclick="document.querySelector('#modal').showModal()"><i class="fa-solid fa-plus"></i>Nova Tarefa</button>
-            //     <dialog id="modal" class="modal">
-            //         <form class="task-form" method="dialog">
-            //             <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
-            //             <div class="separate-items-inside-form">
-            //             <label for="title">Título<input id="title" class="task-title" type="text" autofocus></label>
-            //             </div>
-            //             <div class="separate-items-inside-form">
-            //             <label for="date">Data de Vencimento: <input class="date-input" id="date" type="date"></label>
-            //             </div>
-            //             <div class="separate-items-inside-form">
-            //             <label for="priorities">Prioridade:
-            //                 <select id="priorities" class="priorities">
-            //                 <option value="Baixa">Baixa</option>
-            //                 <option value="Média">Média</option>
-            //                 <option value="Alta">Alta</option>
-            //                 </select>
-            //             </label>
-            //             </div>
-            //             <button class="add-task-btn">Adicionar</button>
-            //         </form>
-            //     </dialog>
-            //     <div class="tasks-added">
-            //     </div>
-            // `) // TODO
+            document.querySelector('.open-modal').style.display='flex'
         }
 
         // Deletar um projeto
