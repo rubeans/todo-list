@@ -17,20 +17,14 @@ function checkIfDuplicateExists(arr) {
 
 // Adicionar novo projeto
 const addProject = (() => {
+    // Adicionar os projetos quando clicar no botão "+"
     addProjectBtn.addEventListener('click', () => {
-
         // Não adicionar se o input tiver vazio
         if (!projectNameInput.value.trim().length) {
             alert('Não é póssivel adicionar um projeto sem um nome.')
         }
-
         // Adicionar se não tiver
         else {
-            const projectContainer = document.createElement('div')
-            projectContainer.classList.add('project')
-            projectContainer.id = `${projectNameInput.value}`
-            newAddedProject.push(projectContainer.id)
-
             // Guardue os items adicionados
             const new_data = projectNameInput.value
             if (localStorage.getItem('projeto') === null) {
@@ -39,24 +33,21 @@ const addProject = (() => {
             const old_data = JSON.parse(localStorage.getItem('projeto'))
             old_data.push(new_data)
             localStorage.setItem('projeto', JSON.stringify(old_data))
-
-            // Adicionar os projetos abaixo do input
-            projectContainer.insertAdjacentHTML('beforeend', `
-                    <button class="project-btn">${capitalize(projectNameInput.value)}</button>
-                    <i class="fa-solid fa-delete-left"></i>
-                `)
-            bottomProjectContent.append(projectContainer)
-            projectNameInput.value = ''
-            projectNameInput.type = 'reset'
-            projectNameInput.type = 'text'
+            location.reload()
         }
     })
 })()
 
 // Carregar projetos que ja foram adicionados antes
-const loadSavedProjects = (() => {
+const loadProjects = (() => {
     if (localStorage.getItem('projeto')) {
         storedProjects = JSON.parse(localStorage.getItem('projeto'))
+        // Projetos não podem ter o mesmo nome
+        if (checkIfDuplicateExists(storedProjects)) {
+            alert('Já existe um projeto com esse nome.')
+            localStorage.projeto = JSON.stringify(JSON.parse(localStorage.projeto ?? "[]").slice(0, -1))
+            location.reload()
+        }
         storedProjects.forEach(project => {
             const projectContainer = document.createElement('div')
             projectContainer.classList.add('project')
@@ -64,9 +55,9 @@ const loadSavedProjects = (() => {
 
             // Caso não tenha, o projecto vai ser adicionado
             projectContainer.insertAdjacentHTML('beforeend', `
-                    <button class="project-btn">${capitalize(project)}</button>
-                    <i class="fa-solid fa-delete-left"></i>
-                `)
+                        <button class="project-btn">${capitalize(project)}</button>
+                        <i class="fa-solid fa-delete-left"></i>
+                    `)
             bottomProjectContent.append(projectContainer)
         })
     }
@@ -80,8 +71,16 @@ const getProjectClicks = (() => {
 
         // Mostrar o conteudo na div main
         if (projectBtn) {
-            document.querySelector('.open-modal').style.display='flex'
-        } //TODO
+            const heading = document.querySelector('.main-heading')
+            localStorage.setItem(`${projectBtn.textContent}`, JSON.stringify({
+                name: `${projectBtn.textContent}`, content: {
+                    taskName: "", dueDate: "", priority: ""
+                }
+            })) //TODO
+            document.querySelector('.open-modal').style.display = 'flex'
+            const getProjectData = JSON.parse(localStorage.getItem(`${projectBtn.textContent}`))
+            heading.textContent = getProjectData.name
+        }
 
         // Deletar um projeto
         else if (removeProjectBtn) {

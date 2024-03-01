@@ -3,20 +3,20 @@ const taskTitle = document.querySelector('.task-title')
 const taskDueDate = document.querySelector('.date-input')
 const taskPriority = document.querySelector('.priorities')
 const addTaskBtn = document.querySelector('.add-task-btn')
-const tasksAdded = document.querySelector('.tasks-added')
 const form = document.querySelector('.task-form')
 
 const todo = new Todo(taskTitle, taskDueDate, taskPriority)
 
 const addTask = (() => {
     addTaskBtn.addEventListener('click', () => {
-        if (!todo.dueDate.value) {
-            todo.dueDate.type = 'text'
-            todo.dueDate.value = 'Sem data definida'
-        } if (!todo.title.value.trim().length) {
+     if (!todo.title.value.trim().length) {
             alert('Não é póssivel adicionar uma tarefa sem um título.')
             return
         }
+        const taskField = document.querySelector('.task-field')
+        const tasksAdded = document.createElement('div')
+        tasksAdded.classList.add('tasks-added')
+        taskField.append(tasksAdded)
         tasksAdded.insertAdjacentHTML('beforeend',
             `<div id="${todo.title.value}" class="task">
                 <div class="left-side-task">
@@ -27,7 +27,7 @@ const addTask = (() => {
                     ${todo.dueDate.value}, Prioridade: ${todo.priority.value}
                 </div> 
             </div>`
-        ) //TODO
+        )
         form.reset()
     })
 })()
